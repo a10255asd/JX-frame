@@ -8,8 +8,9 @@ import lombok.Data;
  * @ClassName: UserDto
  */
 @Data
-public class UserReq {
+public class UserListReq {
 
-    private String name;
-    private Integer age;
+
+    private Integer pageIndex;
+    private Integer pageSize;
 }

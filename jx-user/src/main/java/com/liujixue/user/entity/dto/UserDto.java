@@ -12,4 +12,8 @@ public class UserDto {
     private Long id;
     private String name;
     private Integer age;
+
+    private Integer pageIndex;
+    private Integer pageSize;
+
 }

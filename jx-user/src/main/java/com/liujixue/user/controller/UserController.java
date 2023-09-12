@@ -1,6 +1,8 @@
 package com.liujixue.user.controller;
 
+import com.liujixue.bean.Result;
 import com.liujixue.user.entity.dto.UserDto;
+import com.liujixue.user.entity.req.UserListReq;
 import com.liujixue.user.entity.req.UserReq;
 import com.liujixue.user.service.UserService;
 import org.springframework.beans.BeanUtils;
@@ -18,11 +20,23 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
     @Autowired
     private UserService userService;
+
     @PostMapping
-    public Integer addUser(@RequestBody UserReq userReq){
+    public Result addUser(@RequestBody UserReq userReq) {
         UserDto userDto = new UserDto();
-        BeanUtils.copyProperties(userReq,userDto);
-        int i = userService.addUser(userDto);
-        return i;
+        BeanUtils.copyProperties(userReq, userDto);
+        return Result.ok(userService.addUser(userDto));
+    }
+
+    @DeleteMapping("/{id}")
+    public Result delete(@PathVariable Integer id) {
+        return Result.ok(userService.delete(id));
+    }
+
+    @GetMapping("/list")
+    public Result getUserPage(@RequestBody UserListReq userListReq) {
+        UserDto userDto = new UserDto();
+        BeanUtils.copyProperties(userListReq, userDto);
+        return Result.ok(userService.getUserPage(userDto));
     }
 }
