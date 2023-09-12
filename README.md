@@ -32,3 +32,8 @@ dto 可以包含很多po集成
 ### mybatisplus 提供的拦截器集成
 
 ### 分页查询
+
+### 集成mapstruct
+
+### 集成swagger
+

@@ -1,4 +1,4 @@
-package com.liujixue.user.dao;
+package com.liujixue.user.mapper;
 
 import com.liujixue.user.entity.po.SysUser;
 import org.apache.ibatis.annotations.Param;
