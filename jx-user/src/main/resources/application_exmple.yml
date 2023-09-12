@@ -1,0 +1,32 @@
+server:
+  port: <your port>
+spring:
+  datasource:
+    username: <your username>
+    password: <your password>
+    #driver-class-name: com.mysql.cj.jdbc.Driver
+    #url: jdbc:mysql://<your address>/<your database>?serverTimeZone=Asia/shanghai&useUnicode=true&characterEncoding=UTF-8
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://<your address>/<your database>?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=GMT%2B8
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 20
+      min-idle: 20
+      max-active: 100
+      max-wait: 60000
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        login-username: <your login-username>
+        login-password: <your login-password>
+      filter:
+        stat:
+          enabled: true
+          log-slow-sql: true
+          slow-sql-millis: 2000
+        wall:
+          enabled: true
+sql:
+  beauty:
+    show: true
+
