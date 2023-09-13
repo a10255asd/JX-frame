@@ -1,6 +1,7 @@
 package com.liujixue.user.mapper;
 
 import com.liujixue.user.entity.po.SysUser;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
@@ -10,6 +11,7 @@ import java.util.List;
  * @author makejava
  * @since 2023-09-12 16:47:22
  */
+@Mapper
 public interface SysUserDao {
 
     /**

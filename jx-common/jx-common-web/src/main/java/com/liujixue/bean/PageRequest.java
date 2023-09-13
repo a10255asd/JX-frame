@@ -14,18 +14,18 @@ import java.io.Serializable;
 @Setter
 public class PageRequest implements Serializable {
 
-    private Long pageNo = 1;
-    private Long pageSize = 10;
+    private Long pageNo = 1L;
+    private Long pageSize = 10L;
 
     public Long getPageNo(){
-        if(pageNo == null || pageNo <1){
+        if(pageNo == null || pageNo <1L){
             return 1L;
         }
         return pageNo;
     }
 
     public Long getPageSize(){
-        if(pageSize == null || pageSize<1 || pageSize >Integer.MAX_VALUE){
+        if(pageSize == null || pageSize<1L || pageSize >Integer.MAX_VALUE){
             return 10L;
         }
         return pageSize;

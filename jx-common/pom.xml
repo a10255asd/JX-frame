@@ -16,5 +16,6 @@
     <modules>
         <module>jx-common-web</module>
         <module>jx-common-mybatisplus</module>
+        <module>jx-common-redis</module>
     </modules>
 </project>

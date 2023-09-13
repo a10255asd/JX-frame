@@ -1,5 +1,7 @@
-package com.liujixue.swagger.bean.config;
+package com.liujixue.swagger.config;
 
+import com.liujixue.swagger.bean.SwaggerInfo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.RequestHandler;
@@ -15,22 +17,24 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
+    @Autowired
+    private SwaggerInfo swaggerInfo;
     @Bean
     public Docket CreateRestApi(){
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.liujixue"))
+                .apis(RequestHandlerSelectors.basePackage(swaggerInfo.getBasePackage()))
                 .paths(PathSelectors.any())
                 .build();
     }
 
     public ApiInfo apiInfo(){
         return new ApiInfoBuilder()
-                .title("jx-frame")
-                .contact(new Contact("jx-frame","git地址","@163.com"))
-                .version("1.0")
-                .description("开箱即用的框架")
+                .title(swaggerInfo.getTitle())
+                .contact(new Contact(swaggerInfo.getContactName(),swaggerInfo.getUrl(),swaggerInfo.getEmail()))
+                .version(swaggerInfo.getVersion())
+                .description(swaggerInfo.getDescription())
                 .build();
     }
 }

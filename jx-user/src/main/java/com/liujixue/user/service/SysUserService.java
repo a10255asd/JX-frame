@@ -24,7 +24,6 @@ public interface SysUserService {
     /**
      * 分页查询
      *
-     * @param sysUser 筛选条件
      * @return 查询结果
      */
     PageResponse<SysUser> queryByPage(SysUserReq sysUserReq);
