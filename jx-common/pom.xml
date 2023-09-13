@@ -5,17 +5,71 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.liujixue</groupId>
-        <artifactId>jx-frame</artifactId>
+        <artifactId>jx-dependencies</artifactId>
         <version>1.0.0-SNAPSHOT</version>
+        <relativePath/>
     </parent>
 
-    <groupId>org.liujixue.project</groupId>
+    <groupId>com.liujixue</groupId>
     <artifactId>jx-common</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
         <module>jx-common-web</module>
         <module>jx-common-mybatisplus</module>
         <module>jx-common-redis</module>
+        <module>jx-common-swagger</module>
+        <module>jx-common-log</module>
+        <module>jx-common-starter</module>
     </modules>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.liujixue</groupId>
+                <artifactId>jx-common-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.liujixue</groupId>
+                <artifactId>jx-common-mybatisplus</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.liujixue</groupId>
+                <artifactId>jx-common-redis</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.liujixue</groupId>
+                <artifactId>jx-common-swagger</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.liujixue</groupId>
+                <artifactId>jx-common-web</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.liujixue</groupId>
+                <artifactId>jx-common-log</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--<dependency>
+                <groupId>com.liujixue</groupId>
+                <artifactId>jx-common-tool</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.liujixue</groupId>
+                <artifactId>jx-common-websocket</artifactId>
+                <version>${project.version}</version>
+            </dependency>-->
+            <dependency>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>${oss.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
 </project>

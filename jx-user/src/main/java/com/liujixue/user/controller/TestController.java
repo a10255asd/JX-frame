@@ -1,17 +1,10 @@
 package com.liujixue.user.controller;
 
-import com.liujixue.bean.Result;
 import com.liujixue.redis.util.RedisShareLockUtil;
-import com.liujixue.user.entity.dto.UserDto;
-import com.liujixue.user.entity.req.UserListReq;
-import com.liujixue.user.entity.req.UserReq;
-import com.liujixue.user.service.UserService;
-import org.springframework.beans.BeanUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.concurrent.TimeUnit;
 
 /**
  * @Author LiuJixue
@@ -21,6 +14,7 @@ import java.util.concurrent.TimeUnit;
  */
 @RestController
 @RequestMapping("/test")
+@Slf4j
 public class TestController {
     @Autowired
     private RedisShareLockUtil redisShareLockUtil;

@@ -13,11 +13,13 @@ import org.springframework.stereotype.Component;
  * @ClassName: UserApplication
  */
 @SpringBootApplication
-@MapperScan(value = "com.liujixue.*.mapper")
+@MapperScan(value = "com.liujixue.*.dao")
 @ComponentScan(value = "com.liujixue")
 @EnableCaching
 public class UserApplication {
     public static void main(String[] args) {
+        // 异步 log
+        // System.setProperty("Log4jContextSelector","org.apache.logging.log4j.core.async.AsyncLoggerContextSelector");
         SpringApplication.run(UserApplication.class,args);
     }
 }

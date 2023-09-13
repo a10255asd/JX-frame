@@ -3,7 +3,7 @@ package com.liujixue.user.service.impl;
 import com.liujixue.bean.PageResponse;
 import com.liujixue.user.convert.SysUserConverter;
 import com.liujixue.user.entity.po.SysUser;
-import com.liujixue.user.mapper.SysUserDao;
+import com.liujixue.user.dao.SysUserDao;
 import com.liujixue.user.entity.req.SysUserReq;
 import com.liujixue.user.service.SysUserService;
 import org.springframework.cache.annotation.Cacheable;
