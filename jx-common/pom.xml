@@ -21,6 +21,7 @@
         <module>jx-common-swagger</module>
         <module>jx-common-log</module>
         <module>jx-common-starter</module>
+        <module>jx-common-tool</module>
     </modules>
     <dependencyManagement>
         <dependencies>

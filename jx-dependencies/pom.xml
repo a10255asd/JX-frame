@@ -60,6 +60,7 @@
         <mongodb.version>2.4.7</mongodb.version>
         <rocketmq.version>2.2.3</rocketmq.version>
         <rabbitmq.version>3.1.2</rabbitmq.version>
+        <mariadb.version>2.1.2</mariadb.version>
     </properties>
 
     <dependencies>
@@ -336,6 +337,11 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-amqp</artifactId>
                 <version>${rabbitmq.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mariadb.jdbc</groupId>
+                <artifactId>mariadb-java-client</artifactId>
+                <version>${mariadb.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
